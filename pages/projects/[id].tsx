@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { projects } from "./testdata";
 import { GetStaticPaths, GetStaticProps } from "next/types";
+import "./index.module.css";
 
 let easing = [0.6, -0.05, 0.01, 0.99];
 

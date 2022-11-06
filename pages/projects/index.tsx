@@ -2,7 +2,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { projects } from "./testdata";
 import { useRouter } from "next/router";
-
+import "./index.module.css";
 // Our custom easing
 let easing = [0.6, -0.05, 0.01, 0.99];
 
