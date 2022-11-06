@@ -1,24 +1,23 @@
-import testimage from "../../public/testimage.jpg";
 export const projects = [
   {
     id: "nodeflair",
     role: "Software Engineer (Intern)",
     title: "NodeFlair",
-    image: { testimage },
+    image: "/testimage.jpg",
     price: "#814A0E",
   },
   {
     id: "savour",
     role: "Full Stack Developer",
     title: "Savour!",
-    image: { testimage },
+    image: "/testimage.jpg",
     price: "#959684",
   },
   {
     id: "factorem",
     role: "Frontend Developer (Intern)",
     title: "Factorem Pte. Ltd.",
-    image: { testimage },
+    image: "/testimage.jpg",
     price: "#5DBCD2",
   },
   //   {

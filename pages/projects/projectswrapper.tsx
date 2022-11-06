@@ -7,7 +7,7 @@ function ProjectWrapper({ Component, pageProps }) {
 
   // <Component/> returns the component it self
   // pageProps returns the props you use to in that component. It can be any data
-  // router.route returns the route your component lives on. So in our case it will be '/' or '/products/[id]'
+  // router.route returns the route your component lives on. So in our case it will be '/' or '/projects/[id]'
   // exitBeforeEnter: AnimatePresence will only render one component at a time. The exiting component will finished its exit animation before the entering component is rendered
   return (
     <AnimatePresence exitBeforeEnter>
