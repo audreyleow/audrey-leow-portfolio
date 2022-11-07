@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { projects } from "./testdata";
+import { work_experience } from "./testdata";
 import { GetStaticPaths, GetStaticProps } from "next/types";
 import styles from "./index.module.css";
 
@@ -34,16 +34,37 @@ const fadeInUp = {
 const MotionLink = motion(Link);
 
 const Project = ({
-  project,
+  indivWork,
 }: {
-  project: {
+  indivWork: {
     id: string;
     role: string;
-    title: "NodeFlair";
+    title: string;
     image: string;
-    price: "#814A0E";
+    details: JSX.Element;
+    tech_stack: string;
+    start: string;
+    end: string;
   };
 }) => {
+  const workDetails = () =>
+    indivWork.details.map((line: string) => {
+      return (
+        <motion.li
+          style={{ listStyle: "disc" }}
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{
+            duration: 0.8,
+            delay: 0.5,
+            ease: [0, 0.71, 0.2, 1.01],
+          }}
+        >
+          {line}
+        </motion.li>
+      );
+    });
+
   return (
     <motion.div
       initial="hidden"
@@ -63,42 +84,28 @@ const Project = ({
             initial={{ opacity: 0 }}
           >
             <motion.img
-              src={project.image}
+              src={indivWork.image}
               animate={{ x: 0, opacity: 1 }}
               initial={{ x: 200, opacity: 0 }}
               exit={{ opacity: 0 }}
               transition={{ delay: 0.2 }}
             />
           </motion.div>
-          <div className={styles["product-details"]}>
+          <div className={styles["work-details"]}>
             <motion.div variants={stagger} className={styles.inner}>
               <MotionLink
-                href="/projects"
+                href="/work_experience"
                 variants={fadeInUp}
                 className={styles["go-back"]}
               >
-                Back to products
+                ← Back to my other work experiences
               </MotionLink>
+              <motion.h3 variants={fadeInUp}>{indivWork.title}</motion.h3>
+              <motion.h1 variants={fadeInUp}>{indivWork.role}</motion.h1>
               <motion.div variants={fadeInUp}>
-                <span className={styles.category}>Protein</span>
-              </motion.div>
-              <motion.h1 variants={fadeInUp}>{project.role}</motion.h1>
-              <motion.p variants={fadeInUp}>{project.title}</motion.p>
-              <motion.div variants={fadeInUp} className={styles.additonals}>
-                <span>Soy Free</span>
-                <span>Gluten Free</span>
-              </motion.div>
-              <motion.div variants={fadeInUp} className={styles["qty-price"]}>
-                <div className={styles.qty}>
-                  <div className={styles.minus}>-</div>
-                  <div className={styles.amount}>1</div>
-                  <div className={styles.add}>+</div>
-                </div>
-                <span className={styles.price}>{project.price}</span>
-              </motion.div>
-              <motion.div variants={fadeInUp} className={styles["btn-row"]}>
-                <button className={styles["add-to-cart"]}> Add to cart</button>
-                <button className={styles.subscribe}> Subscribe</button>
+                <motion.ol className={styles.category}>
+                  {workDetails()}
+                </motion.ol>
               </motion.div>
             </motion.div>
           </div>
@@ -111,7 +118,9 @@ const Project = ({
 export default Project;
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = projects.map((project) => ({ params: { id: project.id } }));
+  const paths = work_experience.map((indivWork) => ({
+    params: { id: indivWork.id },
+  }));
   return {
     paths,
     fallback: false,
@@ -119,9 +128,12 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const indivWork = work_experience.find(
+    (indivWork) => indivWork.id === indivWork?.id
+  );
   return {
     props: {
-      project: projects.find((project) => project.id === params?.id),
+      indivWork: { ...indivWork },
     },
   };
 };

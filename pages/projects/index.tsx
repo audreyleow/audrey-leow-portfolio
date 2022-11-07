@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { projects } from "./testdata";
+import { work_experience } from "./testdata";
 import { useRouter } from "next/router";
 import styles from "./index.module.css";
 // Our custom easing
@@ -48,11 +48,11 @@ const Index = () => {
           <h1>My Work Experiences</h1>
         </motion.div>
         <motion.div variants={stagger} className={styles["product-row"]}>
-          {projects.map((project) => (
+          {work_experience.map((work_experience) => (
             <Link
-              key={project.id}
+              key={work_experience.id}
               href="/projects/[id]"
-              as={`/projects/${project.id}`}
+              as={`/projects/${work_experience.id}`}
             >
               <motion.div
                 variants={fadeInUp}
@@ -60,18 +60,17 @@ const Index = () => {
                 whileTap={{ scale: 0.95 }}
                 className={styles.card}
               >
-                <span className={styles.category}>{project.title}</span>
+                <span className={styles.category}>{work_experience.title}</span>
                 <motion.img
                   initial={{ x: 60, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ delay: 0.2 }}
-                  key={project.image}
-                  src={project.image}
+                  key={work_experience.image}
+                  src={work_experience.image}
                   width={250}
                 />
                 <div className={styles["product-info"]}>
-                  <h4>{project.role}</h4>
-                  <span>{project.price}</span>
+                  <h4>{work_experience.role}</h4>
                 </div>
               </motion.div>
             </Link>

@@ -103,7 +103,7 @@
   cursor: move;
   width: 500px;
 }
-.fullscreen .product .product-details {
+.work-details {
   width: 50%;
   height: 100%;
   display: flex;
@@ -111,94 +111,23 @@
   align-items: center;
   justify-content: center;
 }
-.fullscreen .product .product-details .inner {
+
+.inner {
   width: 480px;
   position: relative;
 }
-.fullscreen .product .product-details .inner .go-back {
+
+.go-back {
   cursor: pointer;
-  color: #282828;
+  color: #fff;
   text-decoration: none;
   text-align: left;
   position: absolute;
   top: -124px;
   left: 0;
 }
-.fullscreen .product .product-details .inner .category {
-  font-size: 1rem;
-  color: #424550;
-  font-weight: 500;
-  text-align: center;
-  width: 100%;
-  margin-bottom: 32px;
-}
+
 .fullscreen .product .product-details .inner p {
   color: #424550;
   font-weight: 300;
-}
-.fullscreen .product .product-details .inner .additonals {
-  margin: 24px 0 48px;
-}
-.fullscreen .product .product-details .inner .additonals span {
-  margin-right: 16px;
-  color: #424550;
-}
-.fullscreen .product .product-details .inner .qty-price {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.fullscreen .product .product-details .inner .qty-price .qty {
-  display: flex;
-  align-items: center;
-}
-.fullscreen .product .product-details .inner .qty-price .qty .add,
-.fullscreen .product .product-details .inner .qty-price .qty .minus {
-  padding: 6px;
-  margin: 8px 16px;
-  height: 24px;
-  width: 24px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 100px;
-}
-.fullscreen .product .product-details .inner .qty-price .qty .add {
-  border: 1px solid #282828;
-  cursor: pointer;
-}
-.fullscreen .product .product-details .inner .qty-price .qty .minus {
-  margin-left: 0;
-  background: #dfdfdf;
-  color: #787878;
-}
-.fullscreen .product .product-details .inner .qty-price .price {
-  color: #282828;
-  font-weight: 700;
-  font-size: 1.4rem;
-}
-.fullscreen .product .product-details .inner .btn-row {
-  margin-top: 72px;
-  display: flex;
-  align-items: center;
-}
-.fullscreen .product .product-details .inner .btn-row button {
-  cursor: pointer;
-  border: none;
-  border-radius: 8px;
-  height: 48px;
-  padding: 0 48px;
-  font-size: 0.875rem;
-  text-transform: uppercase;
-  font-weight: 500;
-  letter-spacing: 0.06rem;
-}
-.fullscreen .product .product-details .inner .btn-row button.add-to-cart {
-  background: #2d89fa;
-  color: #fff;
-  margin-right: 24px;
-}
-.fullscreen .product .product-details .inner .btn-row button.subscribe {
-  background: transparent;
-  color: #424550;
 }
