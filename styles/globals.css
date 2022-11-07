@@ -7,6 +7,19 @@ body {
   line-height: 1.6;
   font-size: 18px;
 }
+body[data-theme="light"] {
+  color: #27201a;
+  --color-text-secondary: #076963;
+  background-color: #fff;
+  --color-bg-toggle: #1e90ff;
+}
+
+body[data-theme="dark"] {
+  color: #e3e3e3;
+  --color-text-secondary: #ff6b00;
+  background-color: #15232d;
+  --color-bg-toggle: #a9a9a9;
+}
 
 a {
   color: #0070f3;
