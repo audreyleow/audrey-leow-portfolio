@@ -5,6 +5,10 @@ import { getSortedPostsData } from "../lib/posts";
 import Link from "next/link";
 import Date from "../components/date";
 import { GetStaticProps } from "next";
+import dynamic from "next/dynamic";
+const ThemeToggle = dynamic(() => import("../components/ThemeToggle"), {
+  ssr: false,
+});
 
 export default function Home({
   allPostsData,
@@ -41,6 +45,7 @@ export default function Home({
           ))}
         </ul>
       </section>
+      <ThemeToggle />
     </Layout>
   );
 }
