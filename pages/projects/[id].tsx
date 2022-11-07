@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { projects } from "./testdata";
 import { GetStaticPaths, GetStaticProps } from "next/types";
-import "./index.module.css";
+import styles from "./index.module.css";
 
 let easing = [0.6, -0.05, 0.01, 0.99];
 
@@ -55,10 +55,10 @@ const Project = ({
       }}
       transition={{ type: "linear" }}
     >
-      <div className="fullscreen">
-        <div className="product">
+      <div className={styles.fullscreen}>
+        <div className={styles.product}>
           <motion.div
-            className="img"
+            className={styles.img}
             animate={{ opacity: 1 }}
             initial={{ opacity: 0 }}
           >
@@ -70,31 +70,35 @@ const Project = ({
               transition={{ delay: 0.2 }}
             />
           </motion.div>
-          <div className="product-details">
-            <motion.div variants={stagger} className="inner">
-              <MotionLink href="/projects" variants={fadeInUp} className="go-back">
+          <div className={styles["product-details"]}>
+            <motion.div variants={stagger} className={styles.inner}>
+              <MotionLink
+                href="/projects"
+                variants={fadeInUp}
+                className={styles["go-back"]}
+              >
                 Back to products
               </MotionLink>
               <motion.div variants={fadeInUp}>
-                <span className="category">Protein</span>
+                <span className={styles.category}>Protein</span>
               </motion.div>
               <motion.h1 variants={fadeInUp}>{project.role}</motion.h1>
               <motion.p variants={fadeInUp}>{project.title}</motion.p>
-              <motion.div variants={fadeInUp} className="additonals">
+              <motion.div variants={fadeInUp} className={styles.additonals}>
                 <span>Soy Free</span>
                 <span>Gluten Free</span>
               </motion.div>
-              <motion.div variants={fadeInUp} className="qty-price">
-                <div className="qty">
-                  <div className="minus">-</div>
-                  <div className="amount">1</div>
-                  <div className="add">+</div>
+              <motion.div variants={fadeInUp} className={styles["qty-price"]}>
+                <div className={styles.qty}>
+                  <div className={styles.minus}>-</div>
+                  <div className={styles.amount}>1</div>
+                  <div className={styles.add}>+</div>
                 </div>
-                <span className="price">{project.price}</span>
+                <span className={styles.price}>{project.price}</span>
               </motion.div>
-              <motion.div variants={fadeInUp} className="btn-row">
-                <button className="add-to-cart"> Add to cart</button>
-                <button className="subscribe"> Subscribe</button>
+              <motion.div variants={fadeInUp} className={styles["btn-row"]}>
+                <button className={styles["add-to-cart"]}> Add to cart</button>
+                <button className={styles.subscribe}> Subscribe</button>
               </motion.div>
             </motion.div>
           </div>

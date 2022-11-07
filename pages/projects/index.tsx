@@ -2,7 +2,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { projects } from "./testdata";
 import { useRouter } from "next/router";
-import "./index.module.css";
+import styles from "./index.module.css";
 // Our custom easing
 let easing = [0.6, -0.05, 0.01, 0.99];
 
@@ -39,15 +39,15 @@ const Index = () => {
   const router = useRouter();
   return (
     <motion.div initial="initial" animate="animate" exit={{ opacity: 0 }}>
-      <div className="container center">
+      <div className={styles["work-container"]}>
         <motion.div
           animate={{ opacity: 1 }}
           initial={{ opacity: 0 }}
-          className="title"
+          className={styles["work-title"]}
         >
-          <h1>Select a protein</h1>
+          <h1>My Work Experiences</h1>
         </motion.div>
-        <motion.div variants={stagger} className="product-row">
+        <motion.div variants={stagger} className={styles["product-row"]}>
           {projects.map((project) => (
             <Link
               key={project.id}
@@ -58,9 +58,9 @@ const Index = () => {
                 variants={fadeInUp}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="card"
+                className={styles.card}
               >
-                <span className="category">Protein</span>
+                <span className={styles.category}>{project.title}</span>
                 <motion.img
                   initial={{ x: 60, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
@@ -69,7 +69,7 @@ const Index = () => {
                   src={project.image}
                   width={250}
                 />
-                <div className="product-info">
+                <div className={styles["product-info"]}>
                   <h4>{project.role}</h4>
                   <span>{project.price}</span>
                 </div>
