@@ -67,53 +67,85 @@ const Project = ({
     });
 
   return (
-    <motion.div
-      initial="hidden"
-      animate="enter"
-      variants={{
-        hidden: { opacity: 0, x: -200, y: 0 },
-        enter: { opacity: 1, x: 0, y: 0, transition: { duration: 1 } },
-        exit: { opacity: 0, transition: { duration: 1 } },
-      }}
-      transition={{ type: "linear" }}
-    >
-      <div className={styles.fullscreen}>
-        <div className={styles.product}>
-          <motion.div
-            className={styles.img}
-            animate={{ opacity: 1 }}
-            initial={{ opacity: 0 }}
-          >
-            <CarouselSwiper images={indivWork.images} />
-            {/* <motion.img
-              src={indivWork.images[0]}
-              animate={{ x: 0, opacity: 1 }}
-              initial={{ x: 200, opacity: 0 }}
-              exit={{ opacity: 0 }}
-              transition={{ delay: 0.2 }}
-            /> */}
+    <div className={styles["work-details-container"]}>
+      <motion.div
+        initial="hidden"
+        animate="enter"
+        variants={{
+          hidden: { opacity: 0, x: -200, y: 0 },
+          enter: { opacity: 1, x: 0, y: 0, transition: { duration: 1 } },
+          exit: { opacity: 0, transition: { duration: 1 } },
+        }}
+        transition={{ type: "linear" }}
+        style={{ padding: "20px" }}
+      >
+        <motion.div variants={stagger}>
+          <motion.h3 variants={fadeInUp}>{indivWork.title}</motion.h3>
+          <motion.h1 variants={fadeInUp}>{indivWork.role}</motion.h1>
+          <motion.div variants={fadeInUp}>
+            <motion.ol className={styles.category}>{workDetails()}</motion.ol>
           </motion.div>
-          <div className={styles["work-details"]}>
-            <motion.div variants={stagger} className={styles.inner}>
-              <MotionLink
-                href="/work_experience"
-                variants={fadeInUp}
-                className={styles["go-back"]}
-              >
-                ← Back to my other work experiences
-              </MotionLink>
-              <motion.h3 variants={fadeInUp}>{indivWork.title}</motion.h3>
-              <motion.h1 variants={fadeInUp}>{indivWork.role}</motion.h1>
-              <motion.div variants={fadeInUp}>
-                <motion.ol className={styles.category}>
-                  {workDetails()}
-                </motion.ol>
-              </motion.div>
-            </motion.div>
-          </div>
-        </div>
-      </div>
-    </motion.div>
+          <motion.div>
+            <MotionLink
+              href="/work_experience"
+              variants={fadeInUp}
+              className={styles["go-back"]}
+            >
+              ← Back to my other work experiences
+            </MotionLink>
+          </motion.div>
+        </motion.div>
+      </motion.div>
+
+      <CarouselSwiper images={indivWork.images} />
+    </div>
+    // <motion.div
+    //   initial="hidden"
+    //   animate="enter"
+    //   variants={{
+    //     hidden: { opacity: 0, x: -200, y: 0 },
+    //     enter: { opacity: 1, x: 0, y: 0, transition: { duration: 1 } },
+    //     exit: { opacity: 0, transition: { duration: 1 } },
+    //   }}
+    //   transition={{ type: "linear" }}
+    // >
+    //   <div className={styles.fullscreen}>
+    //     <div className={styles.product}>
+    //       <motion.div
+    //         className={styles.img}
+    //         animate={{ opacity: 1 }}
+    //         initial={{ opacity: 0 }}
+    //       >
+    //         <CarouselSwiper images={indivWork.images} />
+    //         {/* <motion.img
+    //           src={indivWork.images[0]}
+    //           animate={{ x: 0, opacity: 1 }}
+    //           initial={{ x: 200, opacity: 0 }}
+    //           exit={{ opacity: 0 }}
+    //           transition={{ delay: 0.2 }}
+    //         /> */}
+    //       </motion.div>
+    //       <div className={styles["work-details"]}>
+    //         <motion.div variants={stagger} className={styles.inner}>
+    //           <MotionLink
+    //             href="/work_experience"
+    //             variants={fadeInUp}
+    //             className={styles["go-back"]}
+    //           >
+    //             ← Back to my other work experiences
+    //           </MotionLink>
+    //           <motion.h3 variants={fadeInUp}>{indivWork.title}</motion.h3>
+    //           <motion.h1 variants={fadeInUp}>{indivWork.role}</motion.h1>
+    //           <motion.div variants={fadeInUp}>
+    //             <motion.ol className={styles.category}>
+    //               {workDetails()}
+    //             </motion.ol>
+    //           </motion.div>
+    //         </motion.div>
+    //       </div>
+    //     </div>
+    //   </div>
+    // </motion.div>
   );
 };
 

@@ -3,13 +3,15 @@ import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
+import "swiper/css/zoom";
+
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 import styles from "./carousel.module.css";
 
 // import required modules
-import { Pagination, Navigation } from "swiper";
+import { Zoom, Navigation, Pagination } from "swiper";
 
 export default function CarouselSwiper(props) {
   const slides = () =>
@@ -18,7 +20,7 @@ export default function CarouselSwiper(props) {
         <SwiperSlide
           style={{
             color: "black",
-            height: "100%",
+            height: "100vh",
             width: "100%",
             objectFit: "fill",
           }}
@@ -28,8 +30,9 @@ export default function CarouselSwiper(props) {
             alt={`test-${i}`}
             style={{
               height: "100%",
-              width: "100%",
-              objectFit: "fill",
+              margin: "auto",
+              //   width: "100%",
+              //   objectFit: "fill",
             }}
           />
         </SwiperSlide>
@@ -39,15 +42,19 @@ export default function CarouselSwiper(props) {
   return (
     <>
       <Swiper
-        pagination={{
-          type: "fraction",
-        }}
+        zoom={true}
         navigation={true}
-        modules={[Pagination, Navigation]}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[Zoom, Navigation, Pagination]}
         className={styles.mySwiper}
         style={{
           "--swiper-navigation-color": "black",
           "--swiper-pagination-color": "black",
+          backgroundColor: "white",
+          color: "black",
+          width: "100%",
         }}
       >
         {slides()}

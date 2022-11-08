@@ -21,16 +21,15 @@ const factoremDetails = [
 ];
 
 const samplePhotos = [
-  "/testimage.jpg",
-  "/testimage2.jpg",
-  "/testimage3.jpg",
-  "/testimage4.jpg",
-  "/testimage5.jpg",
-  "/testimage.jpg",
-  "/testimage2.jpg",
-  "/testimage3.jpg",
-  "/testimage4.jpg",
-  "/testimage5.jpg",
+  "/nodeflair1.png",
+  "/nodeflair2.png",
+  "/nodeflair3.png",
+  "/nodeflair4.png",
+  "/nodeflair5.png",
+  "/nodeflair6.png",
+  "/nodeflair7.png",
+  "/nodeflair8.png",
+  "/nodeflair9.png",
 ];
 
 export const work_experience = [
