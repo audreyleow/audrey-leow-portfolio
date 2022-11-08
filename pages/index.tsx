@@ -19,6 +19,7 @@ export default function Home({
     id: string;
   }[];
 }) {
+  console.log("home is running");
   return (
     <Layout home>
       <Head>
@@ -43,6 +44,13 @@ export default function Home({
               </small>
             </li>
           ))}
+          <li>
+            <Link href={`/work_experience`}>Projects</Link>
+            <br />
+          </li>  <li>
+            <Link href={`/projects`}>Work Experience</Link>
+            <br />
+          </li>
         </ul>
       </section>
       <ThemeToggle />

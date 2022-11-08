@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { work_experience } from "./testdata";
 import { GetStaticPaths, GetStaticProps } from "next/types";
+import CarouselSwiper from "../../components/CarouselSwiper";
 import styles from "./index.module.css";
 
 let easing = [0.6, -0.05, 0.01, 0.99];
@@ -40,7 +41,7 @@ const Project = ({
     id: string;
     role: string;
     title: string;
-    image: string;
+    images: JSX.Element;
     details: JSX.Element;
     tech_stack: string;
     start: string;
@@ -83,13 +84,14 @@ const Project = ({
             animate={{ opacity: 1 }}
             initial={{ opacity: 0 }}
           >
-            <motion.img
-              src={indivWork.image}
+            <CarouselSwiper images={indivWork.images} />
+            {/* <motion.img
+              src={indivWork.images[0]}
               animate={{ x: 0, opacity: 1 }}
               initial={{ x: 200, opacity: 0 }}
               exit={{ opacity: 0 }}
               transition={{ delay: 0.2 }}
-            />
+            /> */}
           </motion.div>
           <div className={styles["work-details"]}>
             <motion.div variants={stagger} className={styles.inner}>

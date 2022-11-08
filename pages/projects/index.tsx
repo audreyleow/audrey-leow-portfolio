@@ -65,8 +65,8 @@ const Index = () => {
                   initial={{ x: 60, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ delay: 0.2 }}
-                  key={work_experience.image}
-                  src={work_experience.image}
+                  key={work_experience.images[0]}
+                  src={work_experience.images[0]}
                   width={250}
                 />
                 <div className={styles["product-info"]}>

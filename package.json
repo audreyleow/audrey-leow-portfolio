@@ -24,6 +24,7 @@
     "react-lorem-ipsum": "^1.4.10",
     "remark": "^14.0.2",
     "remark-html": "^15.0.1",
+    "swiper": "^8.4.4",
     "typescript": "^4.8.4"
   }
 }

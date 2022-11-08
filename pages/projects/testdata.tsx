@@ -20,12 +20,25 @@ const factoremDetails = [
   "Fixed bugs",
 ];
 
+const samplePhotos = [
+  "/testimage.jpg",
+  "/testimage2.jpg",
+  "/testimage3.jpg",
+  "/testimage4.jpg",
+  "/testimage5.jpg",
+  "/testimage.jpg",
+  "/testimage2.jpg",
+  "/testimage3.jpg",
+  "/testimage4.jpg",
+  "/testimage5.jpg",
+];
+
 export const work_experience = [
   {
     id: "nodeflair",
     role: "Software Engineer (Intern)",
     title: "NodeFlair",
-    image: "/testimage.jpg",
+    images: samplePhotos,
     details: nodeflairDetails,
     tech_stack: "Ruby on Rails, ReactJS",
     start: "Mar 2021",
@@ -35,7 +48,7 @@ export const work_experience = [
     id: "savour",
     role: "Full Stack Developer",
     title: "Savour!",
-    image: "/testimage.jpg",
+    images: samplePhotos,
     details: savourDetails,
     tech_stack: "ReactJS, JavaScript, HTML5, CSS3, Django",
     start: "Dec 2020",
@@ -45,7 +58,7 @@ export const work_experience = [
     id: "factorem",
     role: "Frontend Developer (Intern)",
     title: "Factorem Pte. Ltd.",
-    image: "/testimage.jpg",
+    images: samplePhotos,
     details: factoremDetails,
     tech_stack: "ReactJS, JavaScript, HTML5, CSS3",
     start: "Jun 2020",
