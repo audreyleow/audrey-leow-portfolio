@@ -35,6 +35,8 @@ const stagger = {
   },
 };
 
+const MotionLink = motion(Link);
+
 const Index = () => {
   const router = useRouter();
   return (
@@ -75,6 +77,15 @@ const Index = () => {
               </motion.div>
             </Link>
           ))}
+        </motion.div>
+        <motion.div>
+          <MotionLink
+            href="/"
+            variants={fadeInUp}
+            className={styles["go-back"]}
+          >
+            ← Back to main page
+          </MotionLink>
         </motion.div>
       </div>
     </motion.div>

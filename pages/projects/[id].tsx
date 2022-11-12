@@ -41,8 +41,8 @@ const Project = ({
     id: string;
     role: string;
     title: string;
-    images: JSX.Element;
-    details: JSX.Element;
+    images: string[];
+    details: string[];
     tech_stack: string;
     start: string;
     end: string;
@@ -87,7 +87,7 @@ const Project = ({
           </motion.div>
           <motion.div>
             <MotionLink
-              href="/work_experience"
+              href="/projects"
               variants={fadeInUp}
               className={styles["go-back"]}
             >
@@ -163,11 +163,11 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const indivWork = work_experience.find(
-    (indivWork) => indivWork.id === indivWork?.id
+    (indivWork) => indivWork.id === params?.id
   );
   return {
     props: {
-      indivWork: { ...indivWork },
+      indivWork,
     },
   };
 };

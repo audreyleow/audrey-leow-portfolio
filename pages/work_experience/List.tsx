@@ -3,7 +3,7 @@ import { items } from "./data";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import testimage from "../../public/testimage.jpg";
+import testimage from "../../public/nodeflair1.png";
 
 type CardDetails = {
   id: string;

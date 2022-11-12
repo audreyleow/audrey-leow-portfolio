@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { motion, useScroll } from "framer-motion";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { items } from "./data";
 import Image from "next/image";
-import testimage from "../../public/testimage.jpg";
+import testimage from "../../public/nodeflair1.png";
 import AnimatedWrapper from "./wrapper";
 
 export default function Item({ id }: { id: string }) {
   const [category, setCategory] = useState("");
   const [title, setTitle] = useState("");
-  const { scrollYProgress } = useScroll();
   useEffect(() => {
     const item = items.find((item) => item.id === id);
     if (item) {

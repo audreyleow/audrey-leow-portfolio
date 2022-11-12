@@ -21,10 +21,10 @@ body[data-theme="dark"] {
   --color-bg-toggle: #a9a9a9;
 }
 
-a {
+/* a {
   color: #0070f3;
   text-decoration: none;
-}
+} */
 
 a:hover {
   text-decoration: underline;
