@@ -47,38 +47,47 @@ const Index = () => {
           initial={{ opacity: 0 }}
           className={styles["work-title"]}
         >
-          <h1>My Work Experiences</h1>
+          <div className={styles.heading}>My Work Experiences</div>
         </motion.div>
-        <motion.div variants={stagger} className={styles["product-row"]}>
+        <motion.div variants={stagger} className={styles.cards}>
           {work_experience.map((work_experience) => (
-            <Link
-              key={work_experience.id}
-              href="/projects/[id]"
-              as={`/projects/${work_experience.id}`}
-            >
-              <motion.div
-                variants={fadeInUp}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className={styles.card}
+            <div className={styles["item-container"]}>
+              <Link
+                key={work_experience.id}
+                href="/projects/[id]"
+                as={`/projects/${work_experience.id}`}
               >
-                <span className={styles.category}>{work_experience.title}</span>
-                <motion.img
-                  initial={{ x: 60, opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
-                  transition={{ delay: 0.2 }}
-                  key={work_experience.images[0]}
-                  src={work_experience.images[0]}
-                  width={250}
-                />
-                <div className={styles["product-info"]}>
-                  <h4>{work_experience.role}</h4>
-                </div>
-              </motion.div>
-            </Link>
+                <motion.div
+                  variants={fadeInUp}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className={styles.item}
+                >
+                  <div className={styles.subheading}>
+                    {work_experience.title}
+                  </div>
+                  <motion.img
+                    initial={{ x: 60, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    transition={{ delay: 0.2 }}
+                    key={work_experience.images[0]}
+                    src={work_experience.images[0]}
+                    width={250}
+                    height={150}
+                    style={{ marginTop: "20px", marginBottom: "20px" }}
+                  />
+                  <div className={styles.subheading}>
+                    <div>{work_experience.role}</div>
+                  </div>
+                  <div className={styles.date}>
+                    {`${work_experience.start} - ${work_experience.end}`}
+                  </div>
+                </motion.div>
+              </Link>
+            </div>
           ))}
         </motion.div>
-        <motion.div>
+        <motion.div style={{ paddingTop: "20px" }}>
           <MotionLink
             href="/"
             variants={fadeInUp}
