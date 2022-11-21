@@ -1,15 +1,10 @@
 import Link from "next/link";
-import Image from "next/image";
 import React, { useState } from "react";
 import { navLinks } from "../utils/data";
-import NavItem from "./NavItem";
 import MobileNavbar from "./MobileNavbar";
 import styles from "./navbar.module.css";
 
 const Navbar = () => {
-  //   const [navActive, setNavActive] = useState(false);
-  //   const [activeIdx, setActiveIdx] = useState(-1);
-
   return (
     <div className={styles.header}>
       <nav className={styles.nav}>
