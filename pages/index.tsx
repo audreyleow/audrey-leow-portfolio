@@ -20,16 +20,12 @@ export default function Home({
   }[];
 }) {
   return (
-    <Layout home>
+    <Layout>
       <Head>
         <title>{siteTitle}</title>
       </Head>
       <section className={utilStyles.headingMd}>
         <p>[Your Self Introduction]</p>
-        <p>
-          (This is a sample website - you’ll be building a site like this in{" "}
-          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
-        </p>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
@@ -46,14 +42,17 @@ export default function Home({
           <li>
             <Link href={`/work_experience`}>Projects</Link>
             <br />
-          </li>{" "}
+          </li>
           <li>
             <Link href={`/projects`}>Work Experience</Link>
             <br />
           </li>
         </ul>
       </section>
-      <ThemeToggle />
+      <div style={{ paddingTop: "20px" }}>
+        <h2>Hate the theme? Make the toggle do the thing!</h2>
+        <ThemeToggle />
+      </div>
     </Layout>
   );
 }

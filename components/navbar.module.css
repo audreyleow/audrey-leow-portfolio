@@ -1,0 +1,93 @@
+@import url("https://cdn.jsdelivr.net/npm/@xz/fonts@1/serve/hk-grotesk.min.css");
+
+.header {
+  position: sticky;
+  z-index: 30;
+  top: 0;
+  background-color: #fff;
+  min-width: 350px;
+}
+.nav {
+  display: flex;
+  padding: 16px 20px;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "HK Grotesk", sans-serif;
+  font-weight: 500;
+  /* background-color: #f1f1f1; */
+}
+
+/* .nav * {
+  font-family: "HK Grotesk", sans-serif;
+} */
+
+.name {
+  display: flex;
+  width: 60%;
+  min-width: 140px;
+  white-space: nowrap;
+}
+
+.navlinks {
+  display: flex;
+  justify-content: space-evenly;
+  width: 40%;
+  align-items: center;
+}
+.main-link {
+  text-decoration: none;
+  color: #8490ff !important;
+}
+
+.indiv-link {
+  text-decoration: none;
+  color: #8490ff !important;
+  font-weight: 500;
+  padding-right: 10px;
+  text-align: center;
+}
+
+.mobilenavbar {
+  display: none;
+}
+
+@media screen and (max-width: 915px) {
+  .name {
+    width: 40%;
+    font-size: 16px;
+  }
+  .navlinks {
+    width: 60%;
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .name {
+    width: 35%;
+    font-size: 15px;
+  }
+  .navlinks {
+    width: 65%;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .navlinks {
+    display: none;
+  }
+  .mobilenavbar {
+    display: flex;
+  }
+}
+
+/* mobile */
+
+.mobile-link {
+  text-decoration: none;
+  color: #8490ff !important;
+  font-weight: 500;
+  padding: 20px;
+  text-align: center;
+}
