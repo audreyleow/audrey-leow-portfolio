@@ -1,48 +1,192 @@
 import React from "react";
-import { items } from "./data";
+import { project_items } from "./project_data";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import testimage from "../../public/nodeflair1.png";
-
+import styles from "./list.module.css";
+import Dialog from "@mui/material/Dialog";
+import { useRouter } from "next/router";
 type CardDetails = {
   id: string;
+  type: string;
   title: string;
-  role: string;
-  theme: string;
+  details: string[];
+  tech_stack: string;
+  start: string;
+  end: string;
+  href?: string;
+  as?: string;
 };
 
-function Card({ id, title, role, theme }: Partial<CardDetails>) {
-  return (
-    <li className={`card ${theme}`}>
-      <div className="card-content-container">
-        <motion.div className="card-content" layoutId={`card-container-${id}`}>
-          <motion.div
-            className="card-image-container"
-            layoutId={`card-image-container-${id}`}
-          >
-            <Image className="card-image" src={testimage} alt="test-image" />
-          </motion.div>
-          <motion.div
-            className="title-container"
-            layoutId={`title-container-${id}`}
-          >
-            <span className="category">{role}</span>
-            <h2>{title}</h2>
-          </motion.div>
+let easing = [0.6, -0.05, 0.01, 0.99];
+
+// animate: defines animation
+// initial: defines initial state of animation or stating point.
+// exit: defines animation when component exits
+
+// Custom variant
+const fadeInUp = {
+  initial: {
+    y: 60,
+    opacity: 0,
+    transition: { duration: 0.6, ease: easing },
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.6,
+      ease: easing,
+    },
+  },
+};
+
+const stagger = {
+  animate: {
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+function Card({
+  id,
+  type,
+  title,
+  details,
+  tech_stack,
+  start,
+  end,
+  as,
+  href,
+}: CardDetails) {
+  const projectDetails = () =>
+    details?.map((line: string) => {
+      return (
+        <motion.li
+          style={{ listStyle: "disc" }}
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{
+            duration: 0.8,
+            delay: 0.5,
+            ease: [0, 0.71, 0.2, 1.01],
+          }}
+          className={styles.details}
+        >
+          {line}
+        </motion.li>
+      );
+    });
+
+  const innerComponent = (
+    <motion.div
+      variants={fadeInUp}
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      className={styles["card-content-container"]}
+    >
+      <motion.div>
+        <div className={styles["general-info"]}>
+          <div>
+            <div className={styles.category}>{type}</div>
+            <div className={styles.subheading}>{title}</div>
+          </div>
+          <div className={styles.date}>
+            ({start} - {end})
+          </div>
+        </div>
+
+        <motion.div variants={fadeInUp}>
+          <motion.ol className={styles.details}>{projectDetails()}</motion.ol>
+          {id === "swe-project" ? (
+            <motion.li className={styles.details}>
+              Click to watch application demo!
+            </motion.li>
+          ) : undefined}
         </motion.div>
-      </div>
-      <Link href={"/work_experience/" + id} className={`card-open-link`} />
-    </li>
+      </motion.div>
+    </motion.div>
+  );
+
+  return (
+    <motion.div variants={stagger} className={styles.card}>
+      {as !== undefined && href !== undefined ? (
+        <Link as={as} href={href} className={styles["remove-link-style"]}>
+          {innerComponent}
+        </Link>
+      ) : (
+        <div>{innerComponent}</div>
+      )}
+    </motion.div>
   );
 }
 
-export function List({ selectedId }: { selectedId: string }) {
+export function List() {
+  const router = useRouter();
+
   return (
-    <ul className="card-list">
-      {items.map((card) => (
-        <Card key={card.id} {...card} />
-      ))}
-    </ul>
+    <motion.div initial="initial" animate="animate" exit={{ opacity: 0 }}>
+      <motion.div
+        animate={{ opacity: 1 }}
+        initial={{ opacity: 0 }}
+        className={styles["work-title"]}
+      >
+        <div className={styles.heading}>My Work Experiences</div>
+      </motion.div>
+
+      <motion.div className={styles["card-list"]}>
+        {project_items.map((card) => (
+          <Card
+            key={card.id}
+            {...card}
+            as={card.id === "swe-project" ? "/projects/swe-project" : undefined}
+            href={
+              card.id === "swe-project"
+                ? "/projects/?openModal=swe-project"
+                : undefined
+            }
+          />
+        ))}
+      </motion.div>
+      <motion.div>
+        <Dialog
+          open={router.query.openModal !== undefined}
+          onClose={() => {
+            router.push("/projects");
+          }}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+          sx={{ padding: "20px" }}
+          PaperProps={{
+            sx: {
+              maxWidth: "80%",
+            },
+          }}
+        >
+          <motion.div
+            className={styles["modal-content"]}
+            layoutId={`card-container-swe-project`}
+          >
+            <motion.div animate>
+              Video demonstration of the web application I wrote for my NTU
+              CZ2006 - Software Engineering module.
+            </motion.div>
+            <iframe
+              width="100%"
+              src="https://www.youtube.com/embed/TKunzXhCr-I"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              style={{ aspectRatio: "16 / 9", padding: "20px" }}
+            ></iframe>
+            <motion.div animate>
+              Access to Github repo available upon request!
+            </motion.div>
+          </motion.div>
+        </Dialog>
+      </motion.div>
+    </motion.div>
   );
 }
