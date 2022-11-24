@@ -6,7 +6,7 @@ import styles from "./navbar.module.css";
 
 const Navbar = () => {
   return (
-    <div className={styles.header}>
+    <div className={styles.header + " nav_bar"}>
       <nav className={styles.nav}>
         <div className={styles.name}>
           <Link href={"/"} className={styles["main-link"]}>
