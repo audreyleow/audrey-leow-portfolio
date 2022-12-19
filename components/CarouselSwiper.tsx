@@ -13,7 +13,7 @@ import styles from "./carousel.module.css";
 // import required modules
 import { Zoom, Navigation, Pagination } from "swiper";
 
-export default function CarouselSwiper(props) {
+export default function CarouselSwiper(props: { images: string[] }) {
   const slides = () =>
     props.images.map((image, i) => {
       return (
@@ -50,8 +50,6 @@ export default function CarouselSwiper(props) {
         modules={[Zoom, Navigation, Pagination]}
         className={styles.mySwiper}
         style={{
-          "--swiper-navigation-color": "black",
-          "--swiper-pagination-color": "black",
           backgroundColor: "white",
           color: "black",
           width: "100%",

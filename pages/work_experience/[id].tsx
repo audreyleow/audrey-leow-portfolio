@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { work_experience } from "./testdata";
+import { work_experience } from "../../lib/testdata";
 import { GetStaticPaths, GetStaticProps } from "next/types";
 import CarouselSwiper from "../../components/CarouselSwiper";
 import styles from "./index.module.css";

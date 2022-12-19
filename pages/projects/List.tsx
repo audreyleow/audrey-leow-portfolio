@@ -1,5 +1,5 @@
 import React from "react";
-import { project_items } from "./project_data";
+import { project_items } from "../../lib/project_data";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -122,7 +122,7 @@ function Card({
   );
 }
 
-export function List() {
+export default function List() {
   const router = useRouter();
 
   return (

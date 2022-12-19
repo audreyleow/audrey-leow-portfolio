@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { work_experience } from "./testdata";
+import { work_experience } from "../../lib/testdata";
 import { useRouter } from "next/router";
 import styles from "./index.module.css";
 // Our custom easing

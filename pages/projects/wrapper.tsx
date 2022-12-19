@@ -1,5 +1,5 @@
 import { AnimateSharedLayout, AnimatePresence } from "framer-motion";
-import { List } from "./List";
+import List from "./List";
 import { useRouter } from "next/router";
 
 function AnimatedWrapper() {
