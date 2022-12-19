@@ -18,10 +18,9 @@ export default function Layout({
   return (
     <div className={styles.container}>
       <Head>
-        <link rel="icon" href="/favicon.ico" />
         <meta
           name="description"
-          content="Learn how to build a personal website using Next.js"
+          content="Audrey Leow Software Engineering Portfolio Site"
         />
         <meta
           property="og:image"
@@ -32,19 +31,26 @@ export default function Layout({
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      {/* <Navbar /> */}
       <header className={styles.header}>
-        <>
-          <Image
-            priority
-            src="/nodeflair1.png"
-            className={utilStyles.borderCircle}
-            height={144}
-            width={144}
-            alt={name}
-          />
-          <h1 className={utilStyles.heading2Xl}>{name}</h1>
-        </>
+        <div className={styles.profile}>
+          <div className={styles["intro-container"]}>
+            <div>Hi, I'm</div>
+            <div className={styles.name}>{name}</div>
+            <div className={styles.intro}>
+              <br />
+              I'm a full-stack software engineer that mainly works with React.js
+              and Ruby on Rails but I am language agnostic and interested in
+              designing frontend interfaces and architecting backend processes.
+            </div>
+          </div>
+          <div className={styles.pic}>
+            <img
+              src="/profile_pic.png"
+              // className={utilStyles.borderCircle}
+              alt={name}
+            />
+          </div>
+        </div>
       </header>
       <main>{children}</main>
     </div>

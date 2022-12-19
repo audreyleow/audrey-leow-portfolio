@@ -11,3 +11,44 @@
 .backToHome {
   margin: 3rem 0 0;
 }
+
+.profile {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.pic {
+  display: flex;
+  flex: 0 0 45%;
+  padding-left: 10px;
+  margin: 25px;
+}
+
+.intro-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-right: 10px;
+}
+
+.name {
+  font-size: 48px;
+  font-weight: 600;
+  flex: 0 0 35%;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 715px) {
+  .profile {
+    flex-direction: column;
+  }
+  .pic {
+    padding-left: 0px;
+    margin: 15px 65px 65px 65px;
+  }
+  .intro-container {
+    padding-right: 0px;
+  }
+}

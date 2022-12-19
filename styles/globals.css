@@ -157,3 +157,23 @@ p {
   font-size: 20px;
   line-height: 28px;
 }
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0px;
+  align-items: center;
+}
+
+.bottom-text {
+  font-size: 22px;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+
+@media screen and (max-width: 715px) {
+  .bottom {
+    padding: 0px;
+    margin-top: -25px;
+  }
+}

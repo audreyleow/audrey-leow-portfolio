@@ -56,6 +56,11 @@ export default function MobileNavbar() {
         anchor={"right"}
         open={state["right"]}
         onClose={toggleDrawer("right", false)}
+        sx={{
+          "& .MuiDrawer-paper": {
+            backgroundColor: "#3e607b",
+          },
+        }}
       >
         {list("right")}
       </Drawer>
