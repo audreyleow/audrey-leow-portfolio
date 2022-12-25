@@ -6,7 +6,7 @@ import Link from "next/link";
 import Navbar from "./Navbar";
 
 const name = "[Audrey Leow]";
-export const siteTitle = "Next.js Sample Website";
+export const siteTitle = "Audrey Leow's Portfolio";
 
 export default function Layout({
   children,
