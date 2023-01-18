@@ -1,4 +1,5 @@
-import React, { useRef, useState } from "react";
+import React from "react";
+import Image from "next/image";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
@@ -11,52 +12,36 @@ import "swiper/css/navigation";
 import styles from "./carousel.module.css";
 
 // import required modules
-import { Zoom, Navigation, Pagination } from "swiper";
+import { Navigation, Pagination } from "swiper";
 
 export default function CarouselSwiper(props: { images: string[] }) {
-  const slides = () =>
-    props.images.map((image, i) => {
-      return (
-        <SwiperSlide
-          style={{
-            color: "black",
-            height: "100vh",
-            width: "100%",
-            objectFit: "fill",
-          }}
-        >
-          <img
-            src={image}
-            alt={`test-${i}`}
+  return (
+    <Swiper
+      style={
+        {
+          "--swiper-navigation-color": "#000000",
+          "--swiper-pagination-color": "#ffffff",
+          height: 600,
+        } as any
+      }
+      pagination={{
+        clickable: true,
+      }}
+      navigation={true}
+      modules={[Pagination, Navigation]}
+    >
+      {props.images.map((image, i) => (
+        <SwiperSlide key={image}>
+          <Image
             style={{
-              height: "100%",
-              margin: "auto",
-              //   width: "100%",
-              //   objectFit: "fill",
+              objectFit: "contain",
             }}
+            src={image}
+            alt={`image-${i}`}
+            fill
           />
         </SwiperSlide>
-      );
-    });
-
-  return (
-    <>
-      <Swiper
-        zoom={true}
-        navigation={true}
-        pagination={{
-          clickable: true,
-        }}
-        modules={[Zoom, Navigation, Pagination]}
-        className={styles.mySwiper}
-        style={{
-          backgroundColor: "white",
-          color: "black",
-          width: "100%",
-        }}
-      >
-        {slides()}
-      </Swiper>
-    </>
+      ))}
+    </Swiper>
   );
 }
