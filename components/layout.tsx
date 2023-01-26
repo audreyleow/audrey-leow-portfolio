@@ -1,12 +1,6 @@
 import Head from "next/head";
-import Image from "next/image";
 import styles from "./layout.module.css";
-import utilStyles from "../styles/utils.module.css";
-import Link from "next/link";
-import Navbar from "./Navbar";
-
-const name = "[Audrey Leow]";
-export const siteTitle = "Audrey Leow's Portfolio";
+import { siteTitle } from "../pages";
 
 export default function Layout({
   children,
@@ -31,7 +25,7 @@ export default function Layout({
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <header className={styles.header}>
+      {/* <header className={styles.header}>
         <div className={styles.profile}>
           <div className={styles["intro-container"]}>
             <div>Hi, I'm</div>
@@ -51,7 +45,7 @@ export default function Layout({
             />
           </div>
         </div>
-      </header>
+      </header> */}
       <main>{children}</main>
     </div>
   );

@@ -15,12 +15,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: fixed;
+  /* position: fixed; */
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  /* transform: translate(-50%, -50%); */
   width: 100%;
   min-width: 350px;
+  padding-bottom: 50px;
 }
 
 .work-title {

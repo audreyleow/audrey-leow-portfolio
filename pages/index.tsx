@@ -1,10 +1,10 @@
 import Head from "next/head";
-import Layout, { siteTitle } from "../components/layout";
+import Layout from "../components/layout";
+import styles from "../components/layout.module.css";
 // import { getSortedPostsData } from "../lib/posts";
-import dynamic from "next/dynamic";
-const ThemeToggle = dynamic(() => import("../components/ThemeToggle"), {
-  ssr: false,
-});
+
+const name = "[Audrey Leow]";
+export const siteTitle = "Audrey Leow's Portfolio";
 
 export default function Home({
   allPostsData,
@@ -20,12 +20,27 @@ export default function Home({
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <div className="bottom">
-        <div className="bottom-text">
-          Prefer dark mode? Just flip the toggle!
+      <header className={styles.header}>
+        <div className={styles.profile}>
+          <div className={styles["intro-container"]}>
+            <div>Hi, I'm</div>
+            <div className={styles.name}>{name}</div>
+            <div className={styles.intro}>
+              <br />
+              I'm a full-stack software engineer that mainly works with React.js
+              and Ruby on Rails but I am language agnostic and interested in
+              designing frontend interfaces and architecting backend processes.
+            </div>
+          </div>
+          <div className={styles.pic}>
+            <img
+              src="/profile_pic.png"
+              // className={utilStyles.borderCircle}
+              alt={name}
+            />
+          </div>
         </div>
-        <ThemeToggle />
-      </div>
+      </header>
     </Layout>
   );
 }
