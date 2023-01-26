@@ -40,7 +40,7 @@ export const project_items = [
     details: sweDetails,
     tech_stack: "ReactJS, Express, MongoDB, JavaScript, HTML5, CSS3",
     start: "Oct 2021",
-    end: "Nov 2022",
+    end: "Nov 2021",
   },
   {
     id: "oop-project",
