@@ -114,7 +114,6 @@ function Card({
       </motion.div>
     </motion.div>
   );
-  console.log({ id, as, href });
 
   return (
     <motion.div variants={stagger} className={styles.card}>

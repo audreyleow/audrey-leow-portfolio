@@ -56,7 +56,6 @@ const ThemeToggle = () => {
     }
   }, [activeTheme]);
 
-  console.log("this is running");
   return (
     <ToggleButton
       aria-label={`Change to ${inactiveTheme} mode`}
