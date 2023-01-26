@@ -1,3 +1,8 @@
+const atfDetails = [
+"Designed and developed a responsive full-stack web application for my food blog using TypeScript and Next.js, hosted on Vercel",
+"Created a theme switch toggle component amongst other features available on the site"
+];
+
 const sweDetails = [
   "Developed a responsive full-stack web application using React, Express.js and MongoDB that allows users to create personalised or auto-generated itineraries for activities in Singapore",
   "Integrated firebase authentication that allows users to persist their itinerary preferences by tagging it to their Google account",
@@ -17,6 +22,16 @@ const compthinkDetails = [
   "Programmed a Connect Four game (the pop out version) with a simple user interface and game display using Python, where a human can play against a human or a computer player",
 ];
 export const project_items = [
+  {
+    id: "audrey-the-foodie",
+    type: "Personal Lifestyle Blog",
+    title: "AudreyTheFoodie",
+    // images: sweDetails,
+    details: atfDetails,
+    tech_stack: "TypeScript, Next.JS, MongoDB, JavaScript, HTML5, CSS3",
+    start: "Dec 2022",
+    end: "Present",
+  },
   {
     id: "swe-project",
     type: "Software Engineering Project",

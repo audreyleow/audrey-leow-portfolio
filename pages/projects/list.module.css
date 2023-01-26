@@ -22,6 +22,9 @@
   font-size: 18px;
 }
 
+.link-styling {
+}
+
 .click-demo {
   color: #27201a;
   font-size: 18px;
@@ -98,6 +101,12 @@ body[data-theme="dark"] .details {
 
 .card:nth-child(even) {
   padding-right: 0;
+}
+
+.card:last-child {
+  flex: 0 0 95%;
+  max-width: 100%;
+  min-height: 225px;
 }
 
 .card-content-container {

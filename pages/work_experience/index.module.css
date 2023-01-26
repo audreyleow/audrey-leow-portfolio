@@ -195,7 +195,8 @@
 
 body[data-theme="dark"] .subheading {
   /* color: #423f3e; */
-  color: #e3e3e3;
+  /* color: #e3e3e3; */
+  color: #777;
 }
 
 body[data-theme="dark"] a:hover .subheading {

@@ -16,6 +16,7 @@ type CardDetails = {
   end: string;
   href?: string;
   as?: string;
+  external?: boolean;
 };
 
 let easing = [0.6, -0.05, 0.01, 0.99];
@@ -59,6 +60,7 @@ function Card({
   end,
   as,
   href,
+  external,
 }: CardDetails) {
   const projectDetails = () =>
     details?.map((line: string) => {
@@ -103,15 +105,29 @@ function Card({
             <motion.li className={styles.details}>
               Click to watch application demo!
             </motion.li>
+          ) : id === "audrey-the-foodie" ? (
+            <motion.li className={styles.details}>
+              Click to explore my site!
+            </motion.li>
           ) : undefined}
         </motion.div>
       </motion.div>
     </motion.div>
   );
+  console.log({ id, as, href });
 
   return (
     <motion.div variants={stagger} className={styles.card}>
-      {as !== undefined && href !== undefined ? (
+      {href !== undefined && external ? (
+        <a
+          href={href}
+          className={styles["remove-link-style"]}
+          target="_blank"
+          rel="noopener"
+        >
+          {innerComponent}
+        </a>
+      ) : as !== undefined && href !== undefined && !external ? (
         <Link as={as} href={href} className={styles["remove-link-style"]}>
           {innerComponent}
         </Link>
@@ -132,22 +148,28 @@ export default function List() {
         initial={{ opacity: 0 }}
         className={styles["work-title"]}
       >
-        <div className={styles.heading}>My Work Experiences</div>
+        <div className={styles.heading}>My Projects</div>
       </motion.div>
-
       <motion.div className={styles["card-list"]}>
-        {project_items.map((card) => (
-          <Card
-            key={card.id}
-            {...card}
-            as={card.id === "swe-project" ? "/projects/swe-project" : undefined}
-            href={
-              card.id === "swe-project"
-                ? "/projects/?openModal=swe-project"
-                : undefined
-            }
-          />
-        ))}
+        {project_items.map((card) => {
+          return (
+            <Card
+              {...card}
+              key={card.id}
+              as={
+                card.id === "swe-project" ? "/projects/swe-project" : undefined
+              }
+              href={
+                card.id === "swe-project"
+                  ? "/projects/?openModal=swe-project"
+                  : card.id === "audrey-the-foodie"
+                  ? "https://audreythefoodie.com"
+                  : undefined
+              }
+              external={card.id === "audrey-the-foodie"}
+            />
+          );
+        })}
       </motion.div>
       <motion.div>
         <Dialog
