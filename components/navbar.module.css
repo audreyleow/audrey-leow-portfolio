@@ -9,12 +9,17 @@
 }
 .nav {
   display: flex;
-  padding: 16px 20px;
+  padding: 8px 20px;
   justify-content: space-between;
   align-items: center;
   font-family: "HK Grotesk", sans-serif;
   font-weight: 500;
+  box-shadow: 0 5px 5px 0 hsl(0deg 0% 58% / 75%);
   /* background-color: #f1f1f1; */
+}
+
+body[data-theme="dark"] .nav {
+  box-shadow: none;
 }
 
 /* .nav * {

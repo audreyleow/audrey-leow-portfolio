@@ -1,6 +1,7 @@
 const atfDetails = [
 "Designed and developed a responsive full-stack web application for my food blog using TypeScript and Next.js, hosted on Vercel",
-"Created a theme switch toggle component amongst other features available on the site"
+"Created a theme switch toggle component amongst other features available on the site",
+"Implemented an email newsletter subscription for the site to update users on weekly content uploads"
 ];
 
 const sweDetails = [

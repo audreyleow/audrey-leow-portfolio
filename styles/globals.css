@@ -163,8 +163,13 @@ p {
 .bottom {
   display: flex;
   flex-direction: column;
-  padding: 20px 0px;
+  padding: 30px 0px;
   align-items: center;
+  background-color: #fff;
+}
+
+body[data-theme="dark"] .bottom {
+  background-color: #3e607b;
 }
 
 .bottom-text {
