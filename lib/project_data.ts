@@ -31,7 +31,7 @@ export const project_items = [
     details: atfDetails,
     tech_stack: "TypeScript, Next.JS, MongoDB, JavaScript, HTML5, CSS3",
     start: "Dec 2022",
-    end: "Present",
+    end: "Jan 2023",
   },
   {
     id: "swe-project",
