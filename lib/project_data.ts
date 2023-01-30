@@ -61,7 +61,7 @@ export const project_items = [
     details: dsaiDetails,
     tech_stack: "R",
     start: "Mar 2020",
-    end: "April 2021",
+    end: "Apr 2021",
   },
   {
     id: "intro-to-comp-think-project",
