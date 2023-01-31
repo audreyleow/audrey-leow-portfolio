@@ -91,7 +91,7 @@ const Project = ({
           </motion.div>
           <motion.div>
             <MotionLink
-              href="/projects"
+              href="/work_experience"
               variants={fadeInUp}
               className={styles["go-back"]}
             >
