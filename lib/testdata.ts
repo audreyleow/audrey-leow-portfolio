@@ -1,21 +1,23 @@
 const nodeflairDetails = [
-  "Built the NodeFlair landing page (refer to following pages)",
+  "Built the NodeFlair landing page",
   "Built NodeFlair user profile portal and user onboarding widget",
   "Built Reviews feature and Reviews submission form for NodeFlair",
-  "Build Employer Branding feature",
+  "Built Employer Branding feature",
   "Integrated Webflow for Blogs on the NodeFlair landing page",
+  "Improved SEO performance by reducing webpack bundle sizes and adding a sitemap",
+  "Wrote test cases with RSpec and Jest",
   "Refactored entire codebase’s styling from SCSS",
   "Build on existing features throughout the NodeFlair website and fixed bugs",
 ];
 
 const savourDetails = [
-  "Built frontend UI for Savour portal (refer to following pages)",
+  "Built frontend UI for Savour portal",
   "Implemented email automation for user sign-ups and account verification",
   "Fixed bugs",
 ];
 
 const factoremDetails = [
-  "Built frontend UI for the Factorem portal (refer to following pages)",
+  "Built frontend UI for the Factorem portal",
   "Worked on frontend UI for the Factorem landing page",
   "Fixed bugs",
 ];
@@ -32,18 +34,9 @@ const nodeflairPhotos = [
   "/nodeflair9.png",
 ];
 
-const savourPhotos = [
-  "/savour1.jpg",
-  "/savour2.jpg",
-  "/savour3.jpg",
-];
+const savourPhotos = ["/savour1.jpg", "/savour2.jpg", "/savour3.jpg"];
 
-const factoremPhotos = [
-  "/factorem1.jpg",
-  "/factorem2.jpg",
-  "/factorem3.png",
-];
-
+const factoremPhotos = ["/factorem1.jpg", "/factorem2.jpg", "/factorem3.png"];
 
 export const work_experience = [
   {
