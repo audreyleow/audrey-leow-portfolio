@@ -36,8 +36,22 @@
 .name {
   font-size: 48px;
   font-weight: 600;
-  flex: 0 0 35%;
+  overflow: hidden;
   white-space: nowrap;
+  width: 0;
+  animation: typing;
+  animation-duration: 2s;
+  animation-timing-function: steps(30, end);
+  animation-fill-mode: forwards;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 715px) {

@@ -30,7 +30,7 @@ export default function Home({
         <div className={styles.profile}>
           <div className={styles["intro-container"]}>
             <div>Hi, I'm</div>
-            <div className={styles.name}>{name}</div>
+            <div className={styles["name-test"]}>{name}</div>
             <div className={styles.intro}>
               <br />
               I'm a full-stack software engineer that mainly works with React.js
