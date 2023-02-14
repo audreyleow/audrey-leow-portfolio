@@ -52,3 +52,25 @@
     padding-right: 0px;
   }
 }
+
+.links-container {
+  padding: 60px 20px 20px;
+}
+
+.indiv-links {
+  display: flex;
+  align-items: center;
+  padding: 20px 0px;
+}
+
+.icon {
+  padding: 10px 5px 5px;
+}
+
+.a-icon {
+  padding: 0px 5px 5px;
+}
+
+.email-icon {
+  padding: 2px 5px 5px;
+}
