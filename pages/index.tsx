@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Layout from "../components/layout";
 import styles from "../components/layout.module.css";
+import ShareExternal from "../components/ShareExternal";
 import LinkedInIcon from "../components/icons/LinkedInIcon";
 import AIcon from "../public/icons/a-icon.png";
 import GithubIcon from "../public/icons/github-logo.png";
@@ -37,28 +38,7 @@ export default function Home({
               and Ruby on Rails but I am language agnostic and interested in
               designing frontend interfaces and architecting backend processes.
             </div>
-            <div className={styles["indiv-links"]}>
-              <Link
-                href={"https://github.com/audreyleow"}
-                className={styles["a-icon"]}
-              >
-                <Image src={GithubIcon} alt="a icon" width={32} height={32} />
-              </Link>
-              <Link
-                href={"http://linkedin.com/in/audrey-leow"}
-                className={styles.icon}
-              >
-                <LinkedInIcon />
-              </Link>
-              <Link href={"mailto:audreyleow@yahoo.com.sg"}>
-                <div className={styles["email-icon"]}>
-                  <Image src={EmailIcon} alt="a icon" width={38} height={38} />
-                </div>
-              </Link>
-              {/* <div className={styles["a-icon"]}>
-                <Image src={AIcon} alt="a icon" width={36} height={36} />
-              </div> */}
-            </div>
+            <ShareExternal />
           </div>
           <div className={styles.pic}>
             <img

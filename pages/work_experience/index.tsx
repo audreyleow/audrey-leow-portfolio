@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { work_experience } from "../../lib/testdata";
 import { useRouter } from "next/router";
 import styles from "./index.module.css";
+import AnimatedFadeUpIndiv from "../../components/AnimatedFadeUpIndiv";
 // Our custom easing
 let easing = [0.6, -0.05, 0.01, 0.99];
 
@@ -57,12 +58,7 @@ const Index = () => {
                 href="/work_experience/[id]"
                 as={`/work_experience/${work_experience.id}`}
               >
-                <motion.div
-                  variants={fadeInUp}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className={styles.item}
-                >
+                <AnimatedFadeUpIndiv className={styles.item}>
                   <div className={styles.subheading}>
                     {work_experience.title}
                   </div>
@@ -82,7 +78,7 @@ const Index = () => {
                   <div className={styles.date}>
                     {`${work_experience.start} - ${work_experience.end}`}
                   </div>
-                </motion.div>
+                </AnimatedFadeUpIndiv>
               </Link>
             </div>
           ))}
