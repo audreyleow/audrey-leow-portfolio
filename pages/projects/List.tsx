@@ -81,6 +81,16 @@ function Card({
       );
     });
 
+  const redirectInstructions = (id: string) => {
+    return id === "swe-project"
+      ? "Click to watch application demo!"
+      : id === "audrey-the-foodie"
+      ? "Click to explore my site!"
+      : id === "oop-project"
+      ? "Github available here."
+      : "";
+  };
+
   const innerComponent = (
     <motion.div
       variants={fadeInUp}
@@ -101,15 +111,9 @@ function Card({
 
         <motion.div variants={fadeInUp}>
           <motion.ol className={styles.details}>{projectDetails()}</motion.ol>
-          {id === "swe-project" ? (
-            <motion.li className={styles.details}>
-              Click to watch application demo!
-            </motion.li>
-          ) : id === "audrey-the-foodie" ? (
-            <motion.li className={styles.details}>
-              Click to explore my site!
-            </motion.li>
-          ) : undefined}
+          <motion.li className={styles.details}>
+            {redirectInstructions(id)}
+          </motion.li>
         </motion.div>
       </motion.div>
     </motion.div>
@@ -139,6 +143,15 @@ function Card({
 
 export default function List() {
   const router = useRouter();
+  const projectLinks = (id: string) => {
+    return id === "swe-project"
+      ? "/projects/?openModal=swe-project"
+      : id === "audrey-the-foodie"
+      ? "https://audreythefoodie.com"
+      : id === "oop-project"
+      ? "https://github.com/audreyleow/cz2002-project"
+      : undefined;
+  };
 
   return (
     <motion.div initial="initial" animate="animate" exit={{ opacity: 0 }}>
@@ -158,14 +171,10 @@ export default function List() {
               as={
                 card.id === "swe-project" ? "/projects/swe-project" : undefined
               }
-              href={
-                card.id === "swe-project"
-                  ? "/projects/?openModal=swe-project"
-                  : card.id === "audrey-the-foodie"
-                  ? "https://audreythefoodie.com"
-                  : undefined
+              href={projectLinks(card.id)}
+              external={
+                card.id === "audrey-the-foodie" || card.id === "oop-project"
               }
-              external={card.id === "audrey-the-foodie"}
             />
           );
         })}
