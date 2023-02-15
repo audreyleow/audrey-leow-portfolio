@@ -88,3 +88,40 @@
 .email-icon {
   padding: 2px 5px 5px;
 }
+
+/* Skills.tsx */
+
+.skills-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 120px 20px 150px;
+  width: 100%;
+}
+
+.skills-heading {
+  font-size: 30px;
+  font-weight: 600;
+  padding-bottom: 50px;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border: 1px solid #838383;
+  margin: 0px 40px;
+  width: 100px;
+  height: 140px;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: white;
+}
+
+body[data-theme="dark"] .skills {
+  color: #27201a;
+}
+
+body[data-theme="light"] .skills {
+  color: #27201a;
+}

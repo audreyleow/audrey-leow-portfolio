@@ -4,6 +4,7 @@ import Link from "next/link";
 import Layout from "../components/layout";
 import styles from "../components/layout.module.css";
 import ShareExternal from "../components/ShareExternal";
+import Skills from "../components/Skills";
 // import { getSortedPostsData } from "../lib/posts";
 
 const name = "[Audrey Leow]";
@@ -45,7 +46,7 @@ export default function Home({
           </div>
         </div>
         <b className="divider"></b>
-        <div>hhhhhhh</div>
+        <Skills />
       </header>
     </Layout>
   );

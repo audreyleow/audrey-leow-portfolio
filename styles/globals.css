@@ -204,19 +204,6 @@ body[data-theme="dark"] .bottom {
   left: 0;
 }
 
-.divider:before {
-  background: linear-gradient(
-    90deg,
-    #fff 0%,
-    #fff 50%,
-    transparent 50%,
-    transparent 100%
-  );
-  background-size: 15px; 
-  background-position: center;
-  z-index: 1;
-}
-
 .divider:after {
   transition: opacity 0.3s ease, animation 0.3s ease;
 

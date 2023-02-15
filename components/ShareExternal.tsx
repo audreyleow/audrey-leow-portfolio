@@ -1,11 +1,10 @@
-import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import styles from "./layout.module.css";
 import LinkedInIcon from "./icons/LinkedInIcon";
 import AIcon from "../public/icons/a-icon.png";
-import GithubIcon from "../public/icons/github-logo.png";
-import EmailIcon from "../public/icons/email-logo.png";
+import GithubIcon from "./icons/GithubIcon";
+import EmailIcon from "./icons/EmailIcon";
 import AnimatedFadeUpIndiv from "./AnimatedFadeUpIndiv";
 
 export default function ShareExternal() {
@@ -16,9 +15,9 @@ export default function ShareExternal() {
       exit={{ opacity: 0 }}
       className={styles["indiv-links"]}
     >
-      <Link href={"https://github.com/audreyleow"} className={styles["a-icon"]}>
+      <Link href={"https://github.com/audreyleow"} className={styles.icon}>
         <AnimatedFadeUpIndiv>
-          <Image src={GithubIcon} alt="a icon" width={32} height={32} />
+          <GithubIcon />
         </AnimatedFadeUpIndiv>
       </Link>
       <Link href={"http://linkedin.com/in/audrey-leow"} className={styles.icon}>
@@ -29,7 +28,7 @@ export default function ShareExternal() {
       <Link href={"mailto:audreyleow@yahoo.com.sg"}>
         <div className={styles["email-icon"]}>
           <AnimatedFadeUpIndiv>
-            <Image src={EmailIcon} alt="a icon" width={38} height={38} />
+            <EmailIcon />
           </AnimatedFadeUpIndiv>
         </div>
       </Link>

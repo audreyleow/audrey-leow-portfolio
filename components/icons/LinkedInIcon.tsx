@@ -6,8 +6,8 @@ const LinkedInIcon = ({
 }: React.SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={42}
-    height={42}
+    width={48}
+    height={48}
     viewBox="0 0 48 48"
     {...rest}
   >
