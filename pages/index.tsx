@@ -4,10 +4,6 @@ import Link from "next/link";
 import Layout from "../components/layout";
 import styles from "../components/layout.module.css";
 import ShareExternal from "../components/ShareExternal";
-import LinkedInIcon from "../components/icons/LinkedInIcon";
-import AIcon from "../public/icons/a-icon.png";
-import GithubIcon from "../public/icons/github-logo.png";
-import EmailIcon from "../public/icons/email-logo.png";
 // import { getSortedPostsData } from "../lib/posts";
 
 const name = "[Audrey Leow]";
@@ -48,6 +44,8 @@ export default function Home({
             />
           </div>
         </div>
+        <b className="divider"></b>
+        <div>hhhhhhh</div>
       </header>
     </Layout>
   );
