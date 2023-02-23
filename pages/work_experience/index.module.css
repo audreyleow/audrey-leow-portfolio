@@ -10,11 +10,18 @@
   overflow: hidden;
 } */
 
+.root {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+}
+
 .work-container {
+  flex: 1 1 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   /* position: fixed; */
   top: 50%;
   left: 50%;
@@ -43,6 +50,12 @@
   align-items: center;
   width: 100%;
   padding: 0 80px;
+}
+
+.cards-wrapper {
+  flex: 1 1 0;
+  display: flex;
+  align-items: center;
 }
 
 .cards {
@@ -214,7 +227,7 @@ body[data-theme="dark"] a:hover .subheading {
 
 .carousel-swiper {
   width: 100%;
-  padding: 20px 40px;
+  padding: 20px 40px 60px;
 }
 
 .go-back {

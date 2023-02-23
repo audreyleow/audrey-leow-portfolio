@@ -234,3 +234,15 @@ body[data-theme="dark"] .bottom {
     background-position: 200%;
   }
 }
+
+.root-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1 0 0;
+  display: flex;
+  flex-direction: column;
+}

@@ -11,9 +11,13 @@ const Footer = dynamic(() => import("../components/Footer"), {
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <AnimatePresence mode="wait">
-      <Navbar />
-      <Component {...pageProps} />
-      <Footer />
+      <div className="root-container">
+        <Navbar />
+        <main className="main-content">
+          <Component {...pageProps} />
+        </main>
+        <Footer />
+      </div>
     </AnimatePresence>
   );
 }

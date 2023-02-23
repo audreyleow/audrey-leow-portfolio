@@ -41,7 +41,12 @@ const MotionLink = motion(Link);
 const Index = () => {
   const router = useRouter();
   return (
-    <motion.div initial="initial" animate="animate" exit={{ opacity: 0 }}>
+    <motion.div
+      className={styles.root}
+      initial="initial"
+      animate="animate"
+      exit={{ opacity: 0 }}
+    >
       <div className={styles["work-container"]}>
         <motion.div
           animate={{ opacity: 1 }}
@@ -50,39 +55,44 @@ const Index = () => {
         >
           <div className={styles.heading}>My Work Experiences</div>
         </motion.div>
-        <motion.div variants={stagger} className={styles.cards}>
-          {work_experience.map((work_experience) => (
-            <div className={styles["item-container"]}>
-              <Link
+        <div className={styles["cards-wrapper"]}>
+          <motion.div variants={stagger} className={styles.cards}>
+            {work_experience.map((work_experience) => (
+              <div
                 key={work_experience.id}
-                href="/work_experience/[id]"
-                as={`/work_experience/${work_experience.id}`}
+                className={styles["item-container"]}
               >
-                <AnimatedFadeUpIndiv className={styles.item}>
-                  <div className={styles.subheading}>
-                    {work_experience.title}
-                  </div>
-                  <motion.img
-                    initial={{ x: 60, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
-                    transition={{ delay: 0.2 }}
-                    key={work_experience.images[0]}
-                    src={work_experience.images[0]}
-                    width={250}
-                    height={150}
-                    style={{ marginTop: "20px", marginBottom: "20px" }}
-                  />
-                  <div className={styles.subheading}>
-                    <div>{work_experience.role}</div>
-                  </div>
-                  <div className={styles.date}>
-                    {`${work_experience.start} - ${work_experience.end}`}
-                  </div>
-                </AnimatedFadeUpIndiv>
-              </Link>
-            </div>
-          ))}
-        </motion.div>
+                <Link
+                  key={work_experience.id}
+                  href="/work_experience/[id]"
+                  as={`/work_experience/${work_experience.id}`}
+                >
+                  <AnimatedFadeUpIndiv className={styles.item}>
+                    <div className={styles.subheading}>
+                      {work_experience.title}
+                    </div>
+                    <motion.img
+                      initial={{ x: 60, opacity: 0 }}
+                      animate={{ x: 0, opacity: 1 }}
+                      transition={{ delay: 0.2 }}
+                      key={work_experience.images[0]}
+                      src={work_experience.images[0]}
+                      width={250}
+                      height={150}
+                      style={{ marginTop: "20px", marginBottom: "20px" }}
+                    />
+                    <div className={styles.subheading}>
+                      <div>{work_experience.role}</div>
+                    </div>
+                    <div className={styles.date}>
+                      {`${work_experience.start} - ${work_experience.end}`}
+                    </div>
+                  </AnimatedFadeUpIndiv>
+                </Link>
+              </div>
+            ))}
+          </motion.div>
+        </div>
         <motion.div style={{ paddingTop: "20px" }}>
           <MotionLink
             href="/"
