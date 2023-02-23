@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect, Dispatch, SetStateAction } from "react";
 import styled from "@emotion/styled";
 
 const ToggleButton = styled.button`
@@ -45,8 +45,13 @@ const ToggleThumb = styled.span<{ activeTheme: string }>`
       : "none"};
 `;
 
-const ThemeToggle = () => {
-  const [activeTheme, setActiveTheme] = useState(document.body.dataset.theme);
+const ThemeToggle = ({
+  activeTheme,
+  setActiveTheme,
+}: {
+  activeTheme: string | undefined;
+  setActiveTheme: Dispatch<SetStateAction<string | undefined>>;
+}) => {
   const inactiveTheme = activeTheme === "light" ? "dark" : "light";
 
   useEffect(() => {

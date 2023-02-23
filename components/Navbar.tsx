@@ -17,8 +17,8 @@ const Navbar = () => {
         <div className={styles.navlinks}>
           {navLinks.map((link, index) => {
             return (
-              <Link href={link.path} className={styles["indiv-link"]}>
-                <div key={index}>{link.name}</div>
+              <Link key={link.path} href={link.path} className={styles["indiv-link"]}>
+                <div>{link.name}</div>
               </Link>
             );
           })}

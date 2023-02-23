@@ -27,7 +27,7 @@ export default function Skills() {
 
       <Marquee speed={40} gradientWidth={100}>
         {techStacks.map((techStack) => (
-          <Card techStack={techStack.name} imageRoute={techStack.imageRoute} />
+          <Card key={techStack.name} techStack={techStack.name} imageRoute={techStack.imageRoute} />
         ))}
       </Marquee>
     </div>
