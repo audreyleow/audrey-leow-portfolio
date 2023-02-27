@@ -86,7 +86,7 @@ function Card({
       ? "Click to watch application demo!"
       : id === "audrey-the-foodie"
       ? "Click to explore my site!"
-      : id === "oop-project"
+      : id === "evm-code-challenge" || id === "oop-project"
       ? "Github available here."
       : "";
   };
@@ -144,7 +144,9 @@ function Card({
 export default function List() {
   const router = useRouter();
   const projectLinks = (id: string) => {
-    return id === "swe-project"
+    return id === "evm-code-challenge"
+      ? "https://github.com/audreyleow/evm-code-challenges"
+      : id === "swe-project"
       ? "/projects/?openModal=swe-project"
       : id === "audrey-the-foodie"
       ? "https://audreythefoodie.com"
@@ -173,7 +175,9 @@ export default function List() {
               }
               href={projectLinks(card.id)}
               external={
-                card.id === "audrey-the-foodie" || card.id === "oop-project"
+                card.id === "evm-code-challenge" ||
+                card.id === "audrey-the-foodie" ||
+                card.id === "oop-project"
               }
             />
           );

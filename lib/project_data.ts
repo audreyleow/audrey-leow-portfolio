@@ -1,7 +1,13 @@
+const evmDetails = [
+  "Deployed a utility EVM contract with a method to retrieve all token balances given a wallet address and the token contract addresses",
+  "Deployed 2 ERC20 token contracts to the Goerli testnet",
+  "Implemented a script to retrieve the specified holders of CAKE token on the Binance Smart Chain network.",
+];
+
 const atfDetails = [
-"Designed and developed a responsive full-stack web application for my food blog using TypeScript and Next.js, hosted on Vercel",
-"Created a theme switch toggle component amongst other features available on the site",
-"Implemented an email newsletter subscription for the site to update users on weekly content uploads"
+  "Designed and developed a responsive full-stack web application for my food blog using TypeScript and Next.js, hosted on Vercel",
+  "Created a theme switch toggle component amongst other features available on the site",
+  "Implemented an email newsletter subscription for the site to update users on weekly content uploads",
 ];
 
 const sweDetails = [
@@ -24,10 +30,18 @@ const compthinkDetails = [
 ];
 export const project_items = [
   {
+    id: "evm-code-challenge",
+    type: "Exploring Solidity/EVM Chains",
+    title: "Personal EVM Code Challenges",
+    details: evmDetails,
+    tech_stack: "Solidity, TypeScript, JavaScript",
+    start: "Jan 2023",
+    end: "Feb 2023",
+  },
+  {
     id: "audrey-the-foodie",
     type: "Personal Lifestyle Blog",
     title: "AudreyTheFoodie",
-    // images: sweDetails,
     details: atfDetails,
     tech_stack: "TypeScript, Next.JS, MongoDB, JavaScript, HTML5, CSS3",
     start: "Dec 2022",
@@ -37,7 +51,6 @@ export const project_items = [
     id: "swe-project",
     type: "Software Engineering Project",
     title: "LazyGoWhere",
-    // images: sweDetails,
     details: sweDetails,
     tech_stack: "ReactJS, Express, MongoDB, JavaScript, HTML5, CSS3",
     start: "Oct 2021",
@@ -47,7 +60,6 @@ export const project_items = [
     id: "oop-project",
     type: "Object Oriented Design and Programming Project",
     title: "NTU Course Registration System",
-    // images: oopDetails,
     details: oopDetails,
     tech_stack: "Java",
     start: "Sep 2020",
@@ -57,7 +69,6 @@ export const project_items = [
     id: "intro-to-dsai-project",
     type: "Introduction to Data Science and Artificial Intelligence Project",
     title: "Machine Learning Approaches to Data Analysis",
-    // images: dsaiDetails,
     details: dsaiDetails,
     tech_stack: "R",
     start: "Mar 2020",
@@ -67,7 +78,6 @@ export const project_items = [
     id: "intro-to-comp-think-project",
     type: "Introduction to Computational Thinking Project",
     title: "Connect Four Game",
-    // images: compthinkDetails,
     details: compthinkDetails,
     tech_stack: "Python",
     start: "Oct 2018",

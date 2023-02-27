@@ -103,12 +103,6 @@ body[data-theme="dark"] .details {
   padding-right: 0;
 }
 
-.card:last-child {
-  flex: 0 0 95%;
-  max-width: 100%;
-  min-height: 225px;
-}
-
 .card-content-container {
   width: 100%;
   height: 100%;
